@@ -1,0 +1,16 @@
+//majority element greater than floor of N/2 elements
+
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int count=0;
+        int candidate=0;
+        for(int num:nums){
+            if(count==0) candidate = num;
+            if(num == candidate) count++;
+            else count--;
+        }
+        return candidate;
+
+    }
+};
